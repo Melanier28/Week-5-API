@@ -1,0 +1,40 @@
+.container {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  gap: 16px;
+  background-color: rgb(248, 215, 255);
+  padding: 10px;
+}
+
+.container .profile-card {
+  position: relative;
+  background-color: #f1f1f1;
+  border: 1px solid black;
+  padding: 10px;
+  font-size: 30px;
+  text-align: center;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.container .profile-card:hover {
+  transform: scale(1.1);
+  z-index: 1;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.profile-card .location {
+  opacity: 0;
+  transition: opacity 0.25s ease;
+}
+
+.profile-card:hover .location,
+.profile-card:focus-within .location {
+  opacity: 1;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .container .profile-card,
+  .profile-card .location {
+    transition: none;
+  }
+}
